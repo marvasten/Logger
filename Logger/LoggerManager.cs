@@ -11,7 +11,7 @@ namespace Logger
 {
     public class LoggerManager
     {
-        private AbstractLogger loggers;
+        private AbstractLogger _loggers;
 
         public AbstractLogger GetLoggers(params LogType[] loggerTypes)
         {
@@ -19,6 +19,7 @@ namespace Logger
             AbstractLogger consoleLogger = null;
             AbstractLogger databaseLogger = null;
 
+            // remove possible duplicates in the list and sort it
             List<LogType> loggerTypesNoDupes = loggerTypes.Distinct().OrderBy(t => t.ToString()).ToList();
             foreach (LogType loggerType in loggerTypesNoDupes)
             {
@@ -36,51 +37,47 @@ namespace Logger
                 }
             }
 
+            // determine the active loggers and return 
             if (consoleLogger != null && databaseLogger != null && textfileLogger != null)
             {
                 consoleLogger.SetNextLogger(databaseLogger);
                 databaseLogger.SetNextLogger(textfileLogger);
-                loggers = consoleLogger;
-                return consoleLogger;
+                _loggers = consoleLogger;
             }
             else if (consoleLogger != null && databaseLogger != null && textfileLogger == null)
             {
                 consoleLogger.SetNextLogger(databaseLogger);
-                loggers = consoleLogger;
-                return consoleLogger;
+                _loggers = consoleLogger;
             }
             else if (consoleLogger != null && databaseLogger == null && textfileLogger != null)
             {
                 consoleLogger.SetNextLogger(textfileLogger);
-                loggers = consoleLogger;
-                return consoleLogger;
+                _loggers = consoleLogger;
             }
             else if (consoleLogger == null && databaseLogger != null && textfileLogger != null)
             {
                 databaseLogger.SetNextLogger(textfileLogger);
-                loggers = databaseLogger;
-                return databaseLogger;
+                _loggers = databaseLogger;
             }
             else if (consoleLogger != null && databaseLogger == null && textfileLogger == null)
             {
-                loggers = consoleLogger;
-                return consoleLogger;
+                _loggers = consoleLogger;
             }
             else if (consoleLogger == null && databaseLogger != null && textfileLogger == null)
             {
-                loggers = databaseLogger;
-                return databaseLogger;
+                _loggers = databaseLogger;
             }
-            else // if (consoleLogger == null && databaseLogger == null && textfileLogger != null)
+            else if (consoleLogger == null && databaseLogger == null && textfileLogger != null)
             {
-                loggers = textfileLogger;
-                return textfileLogger;
+                _loggers = textfileLogger;
             }
+
+            return _loggers;
         }
 
         public void LogMessage(LogLevel level, string message)
         {
-            loggers.LogMessage(level, message);
+            _loggers.LogMessage(level, message);
         }
 
     }

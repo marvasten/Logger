@@ -23,6 +23,7 @@ namespace Logger.Run
             {
                 // Define the loggers to use
                 ILogger loggerManager = new LoggerManager().GetLoggers(LogType.DATABASE, LogType.CONSOLE);
+
                 // Log different types of messages
                 loggerManager.LogMessage(LogLevel.ERROR, "This is an error test message");
                 loggerManager.LogMessage(LogLevel.WARNING, "This is a warning test message");
