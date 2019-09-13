@@ -26,7 +26,7 @@ namespace Logger.Logs
                         break;
                 }
 
-                Console.WriteLine(message);
+                Console.WriteLine(string.Format("{0}: {1}", DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss"), message));
             }
             catch (Exception ex)
             {
