@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="abstract class">
+    <Position X="6" Y="1.349" Height="0.382" Width="0.908" />
+  </Comment>
+  <Comment CommentText="Enums">
+    <Position X="10.896" Y="3.321" Height="0.288" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Interface">
+    <Position X="10.896" Y="1.038" Height="0.363" Width="0.709" />
+  </Comment>
+  <Class Name="Logger.Logs.AbstractLogger">
+    <Position X="5.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CgAAAAAgAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Loggers\AbstractLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logger.Logs.ConsoleLogger">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Loggers\ConsoleLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger.Logs.DatabaseLogger">
+    <Position X="5.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CgAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Loggers\DatabaseLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger.Logs.TextFileLogger">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Loggers\TextFileLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger.LoggerManager">
+    <Position X="2.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAEAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoggerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Logger.Interfaces.ILogger">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Logger.Enums.LogLevel">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Enums\LogLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Logger.Enums.LogType">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAQAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\LogType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.83" />
+</ClassDiagram>
