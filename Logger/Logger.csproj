@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient">
-      <Version>4.6.1</Version>
+      <Version>4.8.6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
